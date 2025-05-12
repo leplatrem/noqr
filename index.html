@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anti-QR</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    #text {
+      font-size: 8vw;
+      width: 90%;
+    }
+
+    @media (max-width: 600px) {
+      #text {
+        font-size: 10vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="text"></div>
+
+  <script>
+    const translations = {
+      en: "fuck the QR codes",
+      fr: "fuck les QR codes",
+      es: "que se jodan los códigos QR",
+      ca: "que es fotin els codis QR",
+      de: "scheiß auf die QR-Codes",
+      it: "fanculo i codici QR",
+      pt: "foda-se os códigos QR",
+      nl: "fuck de QR-codes",
+      sv: "fuck QR-koderna",
+      pl: "pierdol kody QR",
+      ru: "нахрен QR-коды",
+      zh: "去他的二维码",
+      ja: "QRコードなんてくそくらえ",
+      ko: "망할 QR 코드",
+      tr: "siktir et QR kodlarını",
+      ar: "تباً للرموز QR"
+    };
+
+    const userLang = (navigator.language || navigator.userLanguage).slice(0, 2);
+    const sentence = translations[userLang] || translations["en"];
+
+    document.getElementById("text").textContent = sentence;
+  </script>
+</body>
+</html>
